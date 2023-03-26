@@ -95,16 +95,18 @@ end)
 local isFueling = false
 local nearestPump
 
+AddTextEntry('ox_fuel_station', locale('fuel_station_blip'))
+
 local function createBlip(station)
 	local blip = AddBlipForCoord(station.x, station.y, station.z)
-	SetBlipSprite(blip, 415)
+	SetBlipSprite(blip, 361)
 	SetBlipDisplay(blip, 4)
-	SetBlipScale(blip, 0.6)
-	SetBlipColour(blip, 23)
+	SetBlipScale(blip, 0.8)
+	SetBlipColour(blip, 6)
 	SetBlipAsShortRange(blip, true)
-	BeginTextCommandSetBlipName('STRING')
-	AddTextComponentSubstringPlayerName(locale('fuel_station_blip'))
+	BeginTextCommandSetBlipName('ox_fuel_station')
 	EndTextCommandSetBlipName(blip)
+
 	return blip
 end
 
@@ -264,6 +266,8 @@ local function startFueling(vehicle, isPump)
 		Wait(Config.refillTick)
 	end
 
+	ClearPedTasks(cache.ped)
+
 	if isPump then
 		TriggerServerEvent('ox_fuel:pay', price, fuel, NetworkGetNetworkIdFromEntity(vehicle))
 	else
@@ -272,7 +276,7 @@ local function startFueling(vehicle, isPump)
 end
 
 local function getPetrolCan(pumpCoord, refuel)
-	TaskTurnPedToFaceCoord(cache.ped, pumpCoord, Config.petrolCan.duration)
+	TaskTurnPedToFaceCoord(cache.ped, pumpCoord.x, pumpCoord.y, pumpCoord.z, Config.petrolCan.duration)
 	Wait(500)
 
 	if lib.progressCircle({
@@ -296,6 +300,8 @@ local function getPetrolCan(pumpCoord, refuel)
 
 		TriggerServerEvent('ox_fuel:fuelCan', false, Config.petrolCan.price)
 	end
+
+	ClearPedTasks(cache.ped)
 end
 
 if not Config.qtarget then
