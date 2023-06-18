@@ -19,13 +19,13 @@ Config = {
 	-- Total duration (ex. 10% missing fuel): 10 / 0.25 * 250 = 10 seconds
 
 	-- Fuel refill value (every 250msec add 0.25%)
-	refillValue = 0.50,
+	refillValue = 1.0,
 
 	-- Fuel tick time (every 250 msec)
 	refillTick = 250,
 
 	-- Fuel cost (Added once every tick)
-	priceTick = 5,
+	priceTick = 0.5,
 
 	-- Can durability loss per refillTick
 	durabilityTick = 1.3,
@@ -45,16 +45,16 @@ Config = {
 
 	-- Fuel usage per second based on vehicle RPM
 	rpmUsage = {
-		[1.0] = 0.14,
-		[0.9] = 0.12,
-		[0.8] = 0.10,
-		[0.7] = 0.09,
-		[0.6] = 0.08,
-		[0.5] = 0.07,
-		[0.4] = 0.05,
-		[0.3] = 0.04,
-		[0.2] = 0.02,
-		[0.1] = 0.01,
+		[1.0] = 0.014,
+		[0.9] = 0.012,
+		[0.8] = 0.010,
+		[0.7] = 0.009,
+		[0.6] = 0.008,
+		[0.5] = 0.007,
+		[0.4] = 0.005,
+		[0.3] = 0.004,
+		[0.2] = 0.002,
+		[0.1] = 0.001,
 		[0.0] = 0.00,
 	},
 
