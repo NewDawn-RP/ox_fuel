@@ -33,9 +33,9 @@ Config = {
 	-- Enables fuel can
 	petrolCan = {
 		enabled = true,
-		duration = 5000,
-		price = 1000,
-		refillPrice = 800,
+		duration = 15000,
+		price = 450,
+		refillPrice = 200,
 	},
 
 	-- Fuel usage multiplier based on class (default 1.0)
