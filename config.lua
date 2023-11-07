@@ -75,6 +75,10 @@ Config = {
 		[`khamelion`] = true,
 		[`voltic`] = true,
 		[`iwagen`] = true,
+		[`inductor`] = true,
+		[`inductor2`] = true,
+		[`coureur`] = true,
+		[`buffalo5`] = true,
 	},
 
 	-- Gas pump models
