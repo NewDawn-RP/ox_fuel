@@ -3,7 +3,7 @@ Config = {
 	versionCheck = true,
 
 	-- Enable support for ox_target
-	ox_target = false,
+	ox_target = true,
 
 	/*
 	* Show or hide gas stations blips
@@ -11,7 +11,7 @@ Config = {
 	* 1 - Show nearest (5000ms interval check)
 	* 2 - Show all
 	*/
-	showBlips = 2,
+	showBlips = 1,
 
 	-- What keys to disable while fueling
 	disabledKeys = { 0, 22, 23, 24, 29, 30, 31, 37, 44, 56, 82, 140, 166, 167, 168, 170, 288, 289, 311, 323 },
@@ -22,10 +22,10 @@ Config = {
 	refillValue = 1.0,
 
 	-- Fuel tick time (every 250 msec)
-	refillTick = 250,
+	refillTick = 500,
 
 	-- Fuel cost (Added once every tick)
-	priceTick = 0.75,
+	priceTick = 3.0,
 
 	-- Can durability loss per refillTick
 	durabilityTick = 1.3,
